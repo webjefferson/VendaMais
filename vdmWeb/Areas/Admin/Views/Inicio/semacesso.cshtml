@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "semacesso";
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/css")
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    @Scripts.Render("~/bundles/js")
+}
+
+<script>
+    $(function () {
+        $('#mensagemModal').modal();
+        $('#mensagemModal').modal('show');
+    });
+</script>
+<div class="modal fade" id="mensagemModal" tabindex="-1" role="dialog" aria-labelledby="mensagemModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="mensagemModalLabel">Você esta sem acesso a esta página!</h4>
+            </div>
+            <div class="modal-body">
+                O motivo pode ser o tempo que ficou sem usar o sistema ou falta de permições para acesso.
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" href="/">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,47 @@
+﻿body {
+   
+}
+#primeiro_menu ul .categoria a{
+    background-color:#BF00FF;
+    color:#fff;
+    border: 1px solid #BF00FF;
+}
+#primeiro_menu ul .categoria a:hover{
+    background-color:#f9f9f9;
+    color:#BF00FF;
+    border: 1px solid #BF00FF;
+}
+#site .row .col-md-3 nav a{
+    background-color:#F5A9D0;
+    border:1px solid #F5A9D0;
+    color:#f1f1f1;
+}
+#site .row .col-md-3 nav a:hover{
+    background-color:#f9f9f9;
+    border:1px solid #F5A9D0;
+    color:#F5A9D0;
+}
+
+@media only screen and (min-width: 992px) {
+    #site {
+        margin-top: 120px;
+    }
+   #form_pesquisa{
+        margin-top:7px;
+    }
+}
+
+@media (min-width:768px) and (max-width: 991px) {
+    #site {
+        margin-top: 180px;
+    }
+    #form_pesquisa{
+        margin-top:7px;
+    }
+}
+
+@media (max-width: 767px) {
+    #site {
+        margin-top: 260px;
+    }
+}
