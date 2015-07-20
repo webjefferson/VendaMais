@@ -37,6 +37,8 @@
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -53,8 +55,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.menuStripPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -135,6 +135,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(942, 110);
             this.panel1.TabIndex = 5;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(552, 5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(33, 29);
+            this.button9.TabIndex = 18;
+            this.button9.Text = "2";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(552, 73);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(33, 29);
+            this.button8.TabIndex = 17;
+            this.button8.Text = "2";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -312,30 +336,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Venda";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(552, 73);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(33, 29);
-            this.button8.TabIndex = 17;
-            this.button8.Text = "2";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(552, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(33, 29);
-            this.button9.TabIndex = 18;
-            this.button9.Text = "2";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
