@@ -25,7 +25,10 @@ namespace vdmAdmin
             if (frmfrmPessoaAdicionar == null )
             {
                 frmfrmPessoaAdicionar = new frmPessoaAdicionar();
+               
+                
                 frmfrmPessoaAdicionar.MdiParent = this;
+
             }
 
             frmfrmPessoaAdicionar.Show();
