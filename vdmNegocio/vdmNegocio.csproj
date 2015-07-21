@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GenericDAO.cs" />
+    <Compile Include="TipoProdutoDAO.cs" />
     <Compile Include="rdnCategoria.cs" />
     <Compile Include="dcDados.designer.cs">
       <AutoGen>True</AutoGen>

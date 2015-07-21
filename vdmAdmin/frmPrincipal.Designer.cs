@@ -37,6 +37,7 @@
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
             this.menuStripPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -96,14 +96,14 @@
             // fisicaToolStripMenuItem
             // 
             this.fisicaToolStripMenuItem.Name = "fisicaToolStripMenuItem";
-            this.fisicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fisicaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.fisicaToolStripMenuItem.Text = "Fisica";
             this.fisicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaToolStripMenuItem_Click);
             // 
             // jurídicaToolStripMenuItem
             // 
             this.jurídicaToolStripMenuItem.Name = "jurídicaToolStripMenuItem";
-            this.jurídicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.jurídicaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.jurídicaToolStripMenuItem.Text = "Jurídica";
             // 
             // produtoToolStripMenuItem
@@ -111,6 +111,7 @@
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
+            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click_1);
             // 
             // conToolStripMenuItem
             // 
@@ -132,6 +133,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(942, 110);
             this.panel1.TabIndex = 5;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(549, 40);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(33, 29);
+            this.button8.TabIndex = 17;
+            this.button8.Text = "2";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -254,7 +267,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(307, 81);
+            this.tabPage2.Size = new System.Drawing.Size(345, 81);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Produto";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -293,22 +306,10 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(307, 81);
+            this.tabPage3.Size = new System.Drawing.Size(345, 81);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Venda";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(549, 40);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(33, 29);
-            this.button8.TabIndex = 17;
-            this.button8.Text = "2";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 

@@ -21,7 +21,7 @@ namespace vdmNegocio
             }
             catch (Exception e)
             {
-                contexto.Transaction.Rollback();
+                //contexto.Transaction.Rollback();
                 return "Erro ao inserir detalhes:" + e;
             }
         }

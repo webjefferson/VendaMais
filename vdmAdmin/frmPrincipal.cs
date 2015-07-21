@@ -55,5 +55,18 @@ namespace vdmAdmin
 
         }
 
+        private void produtoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (frmProdutoAdicionar == null)
+            {
+                frmProdutoAdicionar = new frmProdutoAdicionar();
+                frmProdutoAdicionar.MdiParent = this;
+
+            }
+
+            frmProdutoAdicionar.Show();
+
+        }
+
     }
 }
