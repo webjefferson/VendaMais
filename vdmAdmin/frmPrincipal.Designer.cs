@@ -37,7 +37,6 @@
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -54,7 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.menuStripPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,13 +96,14 @@
             // fisicaToolStripMenuItem
             // 
             this.fisicaToolStripMenuItem.Name = "fisicaToolStripMenuItem";
-            this.fisicaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.fisicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fisicaToolStripMenuItem.Text = "Fisica";
+            this.fisicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaToolStripMenuItem_Click);
             // 
             // jurídicaToolStripMenuItem
             // 
             this.jurídicaToolStripMenuItem.Name = "jurídicaToolStripMenuItem";
-            this.jurídicaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.jurídicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.jurídicaToolStripMenuItem.Text = "Jurídica";
             // 
             // produtoToolStripMenuItem
@@ -112,7 +111,6 @@
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
-            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // conToolStripMenuItem
             // 
@@ -122,9 +120,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -137,25 +133,13 @@
             this.panel1.Size = new System.Drawing.Size(942, 110);
             this.panel1.TabIndex = 5;
             // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(552, 40);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(33, 29);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "2";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(399, 25);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(124, 59);
+            this.button6.Size = new System.Drawing.Size(144, 59);
             this.button6.TabIndex = 15;
             this.button6.Text = "Relatório";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -201,10 +185,10 @@
             // 
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(627, 0);
+            this.panel2.Location = new System.Drawing.Point(589, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(315, 110);
+            this.panel2.Size = new System.Drawing.Size(353, 110);
             this.panel2.TabIndex = 11;
             // 
             // tabControl1
@@ -216,7 +200,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(315, 110);
+            this.tabControl1.Size = new System.Drawing.Size(353, 110);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -227,7 +211,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(307, 81);
+            this.tabPage1.Size = new System.Drawing.Size(345, 81);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pessoa";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -319,24 +303,12 @@
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(552, 73);
+            this.button8.Location = new System.Drawing.Point(549, 40);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(33, 29);
             this.button8.TabIndex = 17;
             this.button8.Text = "2";
             this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(552, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(33, 29);
-            this.button9.TabIndex = 18;
-            this.button9.Text = "2";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
@@ -392,9 +364,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ToolStripMenuItem conToolStripMenuItem;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
 
     }
