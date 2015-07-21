@@ -60,6 +60,9 @@ namespace vdmNegocio
     partial void InsertProduto(Produto instance);
     partial void UpdateProduto(Produto instance);
     partial void DeleteProduto(Produto instance);
+    partial void InsertProdutoTipoUnidade(ProdutoTipoUnidade instance);
+    partial void UpdateProdutoTipoUnidade(ProdutoTipoUnidade instance);
+    partial void DeleteProdutoTipoUnidade(ProdutoTipoUnidade instance);
     #endregion
 		
 		public dcDadosDataContext() : 
@@ -177,6 +180,14 @@ namespace vdmNegocio
 			get
 			{
 				return this.GetTable<Produto>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProdutoTipoUnidade> ProdutoTipoUnidade
+		{
+			get
+			{
+				return this.GetTable<ProdutoTipoUnidade>();
 			}
 		}
 	}
@@ -1581,7 +1592,7 @@ namespace vdmNegocio
 		
 		private int _id_produto;
 		
-		private string _codigo_referencia;
+		private System.Nullable<long> _codigo_referencia;
 		
 		private string _nome;
 		
@@ -1595,11 +1606,15 @@ namespace vdmNegocio
 		
 		private decimal _preco;
 		
+		private System.Nullable<int> _tipo_unidade;
+		
 		private EntitySet<ProdutoImagem> _ProdutoImagem;
 		
 		private EntityRef<Categoria> _Categoria;
 		
 		private EntityRef<SubCategoria> _SubCategoria;
+		
+		private EntityRef<ProdutoTipoUnidade> _ProdutoTipoUnidade;
 		
     #region Definições do Método de Extensibilidade
     partial void OnLoaded();
@@ -1607,7 +1622,7 @@ namespace vdmNegocio
     partial void OnCreated();
     partial void Onid_produtoChanging(int value);
     partial void Onid_produtoChanged();
-    partial void Oncodigo_referenciaChanging(string value);
+    partial void Oncodigo_referenciaChanging(System.Nullable<long> value);
     partial void Oncodigo_referenciaChanged();
     partial void OnnomeChanging(string value);
     partial void OnnomeChanged();
@@ -1621,6 +1636,8 @@ namespace vdmNegocio
     partial void Onid_categoriaChanged();
     partial void OnprecoChanging(decimal value);
     partial void OnprecoChanged();
+    partial void Ontipo_unidadeChanging(System.Nullable<int> value);
+    partial void Ontipo_unidadeChanged();
     #endregion
 		
 		public Produto()
@@ -1628,6 +1645,7 @@ namespace vdmNegocio
 			this._ProdutoImagem = new EntitySet<ProdutoImagem>(new Action<ProdutoImagem>(this.attach_ProdutoImagem), new Action<ProdutoImagem>(this.detach_ProdutoImagem));
 			this._Categoria = default(EntityRef<Categoria>);
 			this._SubCategoria = default(EntityRef<SubCategoria>);
+			this._ProdutoTipoUnidade = default(EntityRef<ProdutoTipoUnidade>);
 			OnCreated();
 		}
 		
@@ -1651,8 +1669,8 @@ namespace vdmNegocio
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_referencia", DbType="NChar(10)")]
-		public string codigo_referencia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_referencia", DbType="BigInt")]
+		public System.Nullable<long> codigo_referencia
 		{
 			get
 			{
@@ -1799,6 +1817,30 @@ namespace vdmNegocio
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo_unidade", DbType="Int")]
+		public System.Nullable<int> tipo_unidade
+		{
+			get
+			{
+				return this._tipo_unidade;
+			}
+			set
+			{
+				if ((this._tipo_unidade != value))
+				{
+					if (this._ProdutoTipoUnidade.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ontipo_unidadeChanging(value);
+					this.SendPropertyChanging();
+					this._tipo_unidade = value;
+					this.SendPropertyChanged("tipo_unidade");
+					this.Ontipo_unidadeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ProdutoImagem", Storage="_ProdutoImagem", ThisKey="id_produto", OtherKey="id_produto")]
 		public EntitySet<ProdutoImagem> ProdutoImagem
 		{
@@ -1880,6 +1922,40 @@ namespace vdmNegocio
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProdutoTipoUnidade_Produto", Storage="_ProdutoTipoUnidade", ThisKey="tipo_unidade", OtherKey="id", IsForeignKey=true)]
+		public ProdutoTipoUnidade ProdutoTipoUnidade
+		{
+			get
+			{
+				return this._ProdutoTipoUnidade.Entity;
+			}
+			set
+			{
+				ProdutoTipoUnidade previousValue = this._ProdutoTipoUnidade.Entity;
+				if (((previousValue != value) 
+							|| (this._ProdutoTipoUnidade.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ProdutoTipoUnidade.Entity = null;
+						previousValue.Produto.Remove(this);
+					}
+					this._ProdutoTipoUnidade.Entity = value;
+					if ((value != null))
+					{
+						value.Produto.Add(this);
+						this._tipo_unidade = value.id;
+					}
+					else
+					{
+						this._tipo_unidade = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ProdutoTipoUnidade");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1910,6 +1986,120 @@ namespace vdmNegocio
 		{
 			this.SendPropertyChanging();
 			entity.Produto = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProdutoTipoUnidade")]
+	public partial class ProdutoTipoUnidade : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _Descricao;
+		
+		private EntitySet<Produto> _Produto;
+		
+    #region Definições do Método de Extensibilidade
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    #endregion
+		
+		public ProdutoTipoUnidade()
+		{
+			this._Produto = new EntitySet<Produto>(new Action<Produto>(this.attach_Produto), new Action<Produto>(this.detach_Produto));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="NChar(2) NOT NULL", CanBeNull=false)]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProdutoTipoUnidade_Produto", Storage="_Produto", ThisKey="id", OtherKey="tipo_unidade")]
+		public EntitySet<Produto> Produto
+		{
+			get
+			{
+				return this._Produto;
+			}
+			set
+			{
+				this._Produto.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Produto(Produto entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProdutoTipoUnidade = this;
+		}
+		
+		private void detach_Produto(Produto entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProdutoTipoUnidade = null;
 		}
 	}
 }

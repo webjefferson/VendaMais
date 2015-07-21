@@ -20,7 +20,6 @@ namespace vdmNegocio
                 contexto.Pessoa.InsertOnSubmit(p);
 
                 pf.idPessoa = p.idPessoa;
-
                 contexto.PessoaFisica.InsertOnSubmit(pf);
                 contexto.SubmitChanges();
                 return pf.idPessoa.ToString();

@@ -14,6 +14,7 @@ namespace vdmAdmin
     public partial class frmPrincipal : Form
     {
         frmPessoaAdicionar frmfrmPessoaAdicionar = null;
+        frmProdutoAdicionar frmProdutoAdicionar = null;
 
         public frmPrincipal()
         {
@@ -22,11 +23,11 @@ namespace vdmAdmin
 
         private void pessoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frmfrmPessoaAdicionar == null )
+            if (frmfrmPessoaAdicionar == null)
             {
                 frmfrmPessoaAdicionar = new frmPessoaAdicionar();
-               
-                
+
+
                 frmfrmPessoaAdicionar.MdiParent = this;
 
             }
@@ -36,6 +37,21 @@ namespace vdmAdmin
 
         private void lbBuscar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmProdutoAdicionar == null)
+            {
+                frmProdutoAdicionar = new frmProdutoAdicionar();
+
+
+                frmProdutoAdicionar.MdiParent = this;
+
+            }
+
+            frmProdutoAdicionar.Show();
 
         }
 

@@ -86,16 +86,25 @@
   <Table Name="dbo.Produto" Member="Produto">
     <Type Name="Produto">
       <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="codigo_referencia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="codigo_referencia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="id_sub_categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="data_inclusao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="id_categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="preco" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_unidade" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Produto_ProdutoImagem" Member="ProdutoImagem" ThisKey="id_produto" OtherKey="id_produto" Type="ProdutoImagem" />
       <Association Name="Categoria_Produto" Member="Categoria" ThisKey="id_categoria" OtherKey="id" Type="Categoria" IsForeignKey="true" />
       <Association Name="SubCategoria_Produto" Member="SubCategoria" ThisKey="id_sub_categoria" OtherKey="id" Type="SubCategoria" IsForeignKey="true" />
+      <Association Name="ProdutoTipoUnidade_Produto" Member="ProdutoTipoUnidade" ThisKey="tipo_unidade" OtherKey="id" Type="ProdutoTipoUnidade" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProdutoTipoUnidade" Member="ProdutoTipoUnidade">
+    <Type Name="ProdutoTipoUnidade">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="ProdutoTipoUnidade_Produto" Member="Produto" ThisKey="id" OtherKey="tipo_unidade" Type="Produto" />
     </Type>
   </Table>
 </Database>
