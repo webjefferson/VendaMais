@@ -50,6 +50,12 @@
     <Compile Include="frmCategoriaAdicionar.Designer.cs">
       <DependentUpon>frmCategoriaAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClienteAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClienteAdicionar.Designer.cs">
+      <DependentUpon>frmClienteAdicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClienteCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
