@@ -37,10 +37,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ckxOutraRegra = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubCatAdd = new System.Windows.Forms.Button();
             this.cbxSubCategoria = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnCatAdd = new System.Windows.Forms.Button();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -50,7 +50,6 @@
             this.btnDuvida = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,7 +57,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.btnComposicao);
             this.groupBox3.Controls.Add(this.cbxUniMed);
             this.groupBox3.Controls.Add(this.label3);
@@ -135,7 +133,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnSubCatAdd);
             this.groupBox2.Controls.Add(this.cbxSubCategoria);
             this.groupBox2.Location = new System.Drawing.Point(282, 71);
             this.groupBox2.Name = "groupBox2";
@@ -144,17 +142,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sub Categoria";
             // 
-            // button1
+            // btnSubCatAdd
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(91, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Nova";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSubCatAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnSubCatAdd.Image")));
+            this.btnSubCatAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubCatAdd.Location = new System.Drawing.Point(91, 13);
+            this.btnSubCatAdd.Name = "btnSubCatAdd";
+            this.btnSubCatAdd.Size = new System.Drawing.Size(57, 23);
+            this.btnSubCatAdd.TabIndex = 18;
+            this.btnSubCatAdd.Text = "Nova";
+            this.btnSubCatAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubCatAdd.UseVisualStyleBackColor = true;
             // 
             // cbxSubCategoria
             // 
@@ -166,7 +164,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnCatAdd);
             this.groupBox1.Controls.Add(this.cbxCategoria);
             this.groupBox1.Location = new System.Drawing.Point(122, 71);
             this.groupBox1.Name = "groupBox1";
@@ -175,17 +173,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categoria";
             // 
-            // button5
+            // btnCatAdd
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(91, 13);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 23);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Nova";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCatAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCatAdd.Image")));
+            this.btnCatAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCatAdd.Location = new System.Drawing.Point(91, 13);
+            this.btnCatAdd.Name = "btnCatAdd";
+            this.btnCatAdd.Size = new System.Drawing.Size(57, 23);
+            this.btnCatAdd.TabIndex = 18;
+            this.btnCatAdd.Text = "Nova";
+            this.btnCatAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCatAdd.UseVisualStyleBackColor = true;
+            this.btnCatAdd.Click += new System.EventHandler(this.btnCatAdd_Click);
             // 
             // cbxCategoria
             // 
@@ -265,16 +264,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(282, 202);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 47;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // frmProdutoAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,10 +293,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox ckxOutraRegra;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubCatAdd;
         private System.Windows.Forms.ComboBox cbxSubCategoria;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCatAdd;
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtNome;
@@ -317,7 +306,6 @@
         private System.Windows.Forms.Button btnDuvida;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.CheckBox checkBox1;
 
     }
 }
