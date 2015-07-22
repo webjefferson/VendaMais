@@ -198,7 +198,6 @@
             this.lbBuscar.Size = new System.Drawing.Size(297, 17);
             this.lbBuscar.TabIndex = 18;
             this.lbBuscar.Text = "Buscar por nome, razão social, CPF ou CNPJ ";
-            this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
             // 
             // tabPage2
             // 
@@ -268,7 +267,6 @@
             this.pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
             this.pessoaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.pessoaToolStripMenuItem.Text = "Cliente";
-            this.pessoaToolStripMenuItem.Click += new System.EventHandler(this.pessoaToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
@@ -300,7 +298,6 @@
             this.menuStripPrincipal.Size = new System.Drawing.Size(942, 24);
             this.menuStripPrincipal.TabIndex = 3;
             this.menuStripPrincipal.Text = "menuStrip1";
-            this.menuStripPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripPrincipal_ItemClicked);
             // 
             // frmPrincipal
             // 
