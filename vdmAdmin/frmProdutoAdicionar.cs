@@ -82,7 +82,7 @@ namespace vdmAdmin
         {
             if (!char.IsDigit(e.KeyChar))
             {
-
+                
                 e.Handled = true;
 
             }
