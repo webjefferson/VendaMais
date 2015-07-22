@@ -50,23 +50,21 @@
     <Compile Include="frmCategoriaAdicionar.Designer.cs">
       <DependentUpon>frmCategoriaAdicionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClienteAdicionar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmClienteAdicionar.Designer.cs">
-      <DependentUpon>frmClienteAdicionar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmClienteCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmClienteCadastrar.Designer.cs">
       <DependentUpon>frmClienteCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConfiguracoes.cs" />
+    <Compile Include="frmConfiguracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmConfiguracoes.Designer.cs">
       <DependentUpon>frmConfiguracoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmICMS.cs" />
+    <Compile Include="frmICMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmICMS.Designer.cs">
       <DependentUpon>frmICMS.cs</DependentUpon>
     </Compile>
@@ -86,9 +84,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCategoriaAdicionar.resx">
       <DependentUpon>frmCategoriaAdicionar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmClienteAdicionar.resx">
-      <DependentUpon>frmClienteAdicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClienteCadastrar.resx">
       <DependentUpon>frmClienteCadastrar.cs</DependentUpon>
