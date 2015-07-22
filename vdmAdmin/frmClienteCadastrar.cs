@@ -69,5 +69,15 @@ namespace vdmAdmin
         {
 
         }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

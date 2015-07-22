@@ -13,7 +13,7 @@ namespace vdmAdmin
 {
     public partial class frmPrincipal : Form
     {
-        frmPessoaAdicionar frmfrmPessoaAdicionar = null;
+        frmClienteAdicionar frmfrmPessoaAdicionar = null;
         frmProdutoAdicionar frmProdutoAdicionar = null;
 
         public frmPrincipal()

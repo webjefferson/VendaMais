@@ -21,5 +21,10 @@ namespace vdmAdmin
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            frmClienteCadastrar.ActiveForm.Show;
+        }
     }
 }
