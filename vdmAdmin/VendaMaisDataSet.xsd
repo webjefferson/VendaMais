@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VendaMaisDataSet" targetNamespace="http://tempuri.org/VendaMaisDataSet.xsd" xmlns:mstns="http://tempuri.org/VendaMaisDataSet.xsd" xmlns="http://tempuri.org/VendaMaisDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VendaMaisConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VendaMaisConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.vdmAdmin.Properties.Settings.GlobalReference.Default.VendaMaisConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaísTableAdapter" GeneratorDataComponentClassName="PaísTableAdapter" Name="País" UserDataComponentName="PaísTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VendaMaisConnectionString (Settings)" DbObjectName="VendaMais.dbo.País" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Brasil, Argentina FROM dbo.País</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Brasil" DataSetColumn="Brasil" />
+              <Mapping SourceColumn="Argentina" DataSetColumn="Argentina" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="VendaMaisDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="VendaMaisDataSet" msprop:Generator_UserDSName="VendaMaisDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="País" msprop:Generator_TableClassName="PaísDataTable" msprop:Generator_TableVarName="tablePaís" msprop:Generator_TablePropName="País" msprop:Generator_RowDeletingName="PaísRowDeleting" msprop:Generator_RowChangingName="PaísRowChanging" msprop:Generator_RowEvHandlerName="PaísRowChangeEventHandler" msprop:Generator_RowDeletedName="PaísRowDeleted" msprop:Generator_UserTableName="País" msprop:Generator_RowChangedName="PaísRowChanged" msprop:Generator_RowEvArgName="PaísRowChangeEvent" msprop:Generator_RowClassName="PaísRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Brasil" msprop:Generator_ColumnVarNameInTable="columnBrasil" msprop:Generator_ColumnPropNameInRow="Brasil" msprop:Generator_ColumnPropNameInTable="BrasilColumn" msprop:Generator_UserColumnName="Brasil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Argentina" msprop:Generator_ColumnVarNameInTable="columnArgentina" msprop:Generator_ColumnPropNameInRow="Argentina" msprop:Generator_ColumnPropNameInTable="ArgentinaColumn" msprop:Generator_UserColumnName="Argentina" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
