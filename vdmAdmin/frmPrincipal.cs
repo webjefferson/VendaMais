@@ -22,18 +22,9 @@ namespace vdmAdmin
         }
 
         private void pessoaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frmfrmPessoaAdicionar == null)
-            {
-                frmfrmPessoaAdicionar = new frmPessoaAdicionar();
+        {            frmfrmPessoaAdicionar.Show();
 
-
-                frmfrmPessoaAdicionar.MdiParent = this;
-
-            }
-
-            frmfrmPessoaAdicionar.Show();
-        }
+          }
 
         private void lbBuscar_Click(object sender, EventArgs e)
         {

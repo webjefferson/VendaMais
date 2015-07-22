@@ -44,11 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmPessoaAdicionar.cs">
+    <Compile Include="frmClienteAdicionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPessoaAdicionar.Designer.cs">
-      <DependentUpon>frmPessoaAdicionar.cs</DependentUpon>
+    <Compile Include="frmClienteAdicionar.Designer.cs">
+      <DependentUpon>frmClienteAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClienteCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClienteCadastrar.Designer.cs">
+      <DependentUpon>frmClienteCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -64,13 +70,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VendaMaisDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VendaMaisDataSet.xsd</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="frmPessoaAdicionar.resx">
-      <DependentUpon>frmPessoaAdicionar.cs</DependentUpon>
+    <EmbeddedResource Include="frmClienteAdicionar.resx">
+      <DependentUpon>frmClienteAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClienteCadastrar.resx">
+      <DependentUpon>frmClienteCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -86,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +121,9 @@
       <Project>{1076720f-15b1-4864-8669-f85e995e9c5b}</Project>
       <Name>vdmNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
