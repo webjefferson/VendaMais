@@ -44,24 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCategoriaAdicionar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCategoriaAdicionar.Designer.cs">
-      <DependentUpon>frmCategoriaAdicionar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmConfiguracoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConfiguracoes.Designer.cs">
-      <DependentUpon>frmConfiguracoes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmICMS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmICMS.Designer.cs">
-      <DependentUpon>frmICMS.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPessoaAdicionar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,15 +64,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCategoriaAdicionar.resx">
-      <DependentUpon>frmCategoriaAdicionar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmConfiguracoes.resx">
-      <DependentUpon>frmConfiguracoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmICMS.resx">
-      <DependentUpon>frmICMS.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="VendaMaisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendaMaisDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmPessoaAdicionar.resx">
       <DependentUpon>frmPessoaAdicionar.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +96,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VendaMaisDataSet.xsc">
+      <DependentUpon>VendaMaisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendaMaisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendaMaisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendaMaisDataSet.xss">
+      <DependentUpon>VendaMaisDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

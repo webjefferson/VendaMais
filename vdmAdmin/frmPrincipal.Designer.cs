@@ -96,14 +96,14 @@
             // fisicaToolStripMenuItem
             // 
             this.fisicaToolStripMenuItem.Name = "fisicaToolStripMenuItem";
-            this.fisicaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.fisicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fisicaToolStripMenuItem.Text = "Fisica";
             this.fisicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaToolStripMenuItem_Click);
             // 
             // jurídicaToolStripMenuItem
             // 
             this.jurídicaToolStripMenuItem.Name = "jurídicaToolStripMenuItem";
-            this.jurídicaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.jurídicaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.jurídicaToolStripMenuItem.Text = "Jurídica";
             // 
             // produtoToolStripMenuItem
