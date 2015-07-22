@@ -248,7 +248,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+         
             // 
             // button2
             // 
@@ -279,8 +279,7 @@
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(119, 20);
             this.txtRG.TabIndex = 4;
-            this.txtRG.TextChanged += new System.EventHandler(this.txtRG_TextChanged);
-            // 
+                       // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(55, 83);
@@ -321,7 +320,7 @@
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "RG:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+    
             // 
             // label4
             // 
@@ -358,7 +357,7 @@
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "Bairro:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+         
             // 
             // label8
             // 
@@ -377,7 +376,7 @@
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 17;
             this.label10.Text = "Logradouro:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+         
             // 
             // textBox6
             // 
@@ -392,7 +391,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 15;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+       
             // 
             // textBox8
             // 
@@ -407,7 +406,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(226, 20);
             this.textBox10.TabIndex = 12;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+         
             // 
             // label11
             // 
@@ -417,7 +416,7 @@
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Municipio:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+      
             // 
             // label12
             // 
@@ -466,7 +465,7 @@
             this.label9.Size = new System.Drawing.Size(47, 13);
             this.label9.TabIndex = 29;
             this.label9.Text = "Numero:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+         
             // 
             // textBox9
             // 
@@ -474,7 +473,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(60, 20);
             this.textBox9.TabIndex = 28;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+      
             // 
             // button3
             // 
@@ -697,7 +696,7 @@
             this.label29.Size = new System.Drawing.Size(24, 13);
             this.label29.TabIndex = 26;
             this.label29.Text = "UF:";
-            this.label29.Click += new System.EventHandler(this.label29_Click);
+      
             // 
             // textBox24
             // 
@@ -705,8 +704,7 @@
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(100, 20);
             this.textBox24.TabIndex = 23;
-            this.textBox24.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
-            // 
+                      // 
             // textBox25
             // 
             this.textBox25.Location = new System.Drawing.Point(74, 55);

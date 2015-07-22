@@ -22,8 +22,8 @@ namespace vdmAdmin
         }
 
         private void pessoaToolStripMenuItem_Click(object sender, EventArgs e)
-        {            frmfrmPessoaAdicionar.Show();
-
+        {      
+            
           }
 
         private void lbBuscar_Click(object sender, EventArgs e)
@@ -56,6 +56,11 @@ namespace vdmAdmin
             }
 
             frmProdutoAdicionar.Show();
+
+        }
+
+        private void menuStripPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
 
