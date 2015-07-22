@@ -318,6 +318,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN - VendaMais";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

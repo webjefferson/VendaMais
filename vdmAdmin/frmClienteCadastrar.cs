@@ -17,6 +17,11 @@ namespace vdmAdmin
             InitializeComponent();
         }
 
+        private void frmClienteCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
