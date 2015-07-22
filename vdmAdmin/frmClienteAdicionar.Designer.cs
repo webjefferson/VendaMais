@@ -56,35 +56,37 @@
             // 
             // txtPNome
             // 
-            this.txtPNome.Location = new System.Drawing.Point(84, 47);
+            this.txtPNome.Location = new System.Drawing.Point(125, 47);
             this.txtPNome.Name = "txtPNome";
-            this.txtPNome.Size = new System.Drawing.Size(390, 20);
+            this.txtPNome.Size = new System.Drawing.Size(349, 20);
             this.txtPNome.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 50);
+            this.label1.Location = new System.Drawing.Point(6, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Nome:";
+            this.label1.Text = "Nome / Razão Social:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 80);
+            this.label2.Location = new System.Drawing.Point(6, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "CPF:";
+            this.label2.Text = "CPF / CNPJ:";
             // 
             // txtPCPF
             // 
-            this.txtPCPF.Location = new System.Drawing.Point(84, 77);
+            this.txtPCPF.Location = new System.Drawing.Point(87, 77);
             this.txtPCPF.Name = "txtPCPF";
             this.txtPCPF.Size = new System.Drawing.Size(149, 20);
             this.txtPCPF.TabIndex = 5;
+            this.txtPCPF.TextChanged += new System.EventHandler(this.txtPCPF_TextChanged);
             // 
             // btnPesquisar
             // 
@@ -129,6 +131,8 @@
             // 
             this.groupBox1.Controls.Add(this.txtPTelefone);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(9, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(499, 111);
@@ -162,8 +166,6 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPCPF);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPNome);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
