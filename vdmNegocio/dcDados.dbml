@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VendaMais" Class="dcDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=JEFFERSON-PC\SQLEXPRESS;Initial Catalog=VendaMais;Integrated Security=True" SettingsObjectName="vdmNegocio.Properties.Settings" SettingsPropertyName="VendaMaisConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VendasMais" Class="dcDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=VendasMais;Integrated Security=True" SettingsObjectName="vdmNegocio.Properties.Settings" SettingsPropertyName="VendasMaisConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Categoria" Member="Categoria">
     <Type Name="Categoria">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -112,6 +112,12 @@
       <Column Name="idPaís" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Brasil" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Argentina" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Configuracoes" Member="Configuracoes">
+    <Type Name="Configuracoes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="regime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

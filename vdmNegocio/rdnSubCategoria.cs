@@ -29,9 +29,7 @@ namespace vdmNegocio
         {
             dcDadosDataContext contexto = new dcDadosDataContext();
 
-            List<SubCategoria> lista = new List<SubCategoria>();
-
-            lista = contexto.SubCategoria.ToList();
+            List<SubCategoria> lista = contexto.SubCategoria.ToList();
                 
             return lista;
             

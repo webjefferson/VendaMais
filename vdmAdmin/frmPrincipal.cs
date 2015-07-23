@@ -15,6 +15,7 @@ namespace vdmAdmin
     {
         frmClienteAdicionar frmfrmPessoaAdicionar = null;
         frmProdutoAdicionar frmProdutoAdicionar = null;
+        frmConfiguracoes frmConfig = null;
 
         public frmPrincipal()
         {
@@ -48,6 +49,18 @@ namespace vdmAdmin
 
             frmProdutoAdicionar.Show();
 
+        }
+
+        private void conToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmConfig == null)
+            {
+                frmConfig = new frmConfiguracoes();
+                frmConfig.MdiParent = this;
+
+            }
+
+            frmConfig.Show();
         }
         
     }
