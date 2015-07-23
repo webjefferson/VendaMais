@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GenericDAO.cs" />
+    <Compile Include="rdnImposto.cs" />
     <Compile Include="rdnConfiguracoes.cs" />
     <Compile Include="TipoProdutoDAO.cs" />
     <Compile Include="rdnCategoria.cs" />

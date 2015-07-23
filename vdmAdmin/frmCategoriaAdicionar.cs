@@ -7,22 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vdmNegocio;
 
 namespace vdmAdmin
 {
     public partial class frmCategoriaAdicionar : Form
     {
-        public frmCategoriaAdicionar()
+        Categoria cat = null;
+        rdnCategoria rdnCat = new rdnCategoria();
+
+        public frmCategoriaAdicionar(Categoria c = null)
         {
             InitializeComponent();
+
+            if (c != null)
+            {
+                cat = c;
+
+                if (cat != null)
+                {
+                    frmImposto frmicms = new frmImposto(cat);
+                    frmicms.MdiParent = this;
+                    frmicms.Tag = 1;
+                    frmicms.Show();
+                }
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            frmICMS frmicms = new frmICMS();
 
-            frmicms.MdiParent = this;
-            frmicms.Show();
+            if (cat == null)
+            {
+                cat = new Categoria();
+                String erro = "";
+
+                if (erro == "")
+                {
+                    cat.nome = txtNome.Text;
+                    MessageBox.Show(rdnCat.adicionar(cat));
+                }
+            }
         }
     }
 }

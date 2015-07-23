@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace vdmAdmin
 {
-    public partial class frmICMS : Form
+    public partial class frmICMSAdicionar : Form
     {
-        public frmICMS()
+        public frmICMSAdicionar()
         {
             InitializeComponent();
         }

@@ -6,6 +6,7 @@
       <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Association Name="Categoria_SubCategoriaDasCategorias" Member="SubCategoriaDasCategorias" ThisKey="id" OtherKey="id_categoria" Type="SubCategoriaDasCategorias" />
       <Association Name="Categoria_Produto" Member="Produto" ThisKey="id" OtherKey="id_categoria" Type="Produto" />
+      <Association Name="Categoria_Imposto" Member="Imposto" ThisKey="id" OtherKey="id_categoria" Type="Imposto" />
     </Type>
   </Table>
   <Table Name="dbo.Pessoa" Member="Pessoa">
@@ -98,6 +99,7 @@
       <Association Name="Categoria_Produto" Member="Categoria" ThisKey="id_categoria" OtherKey="id" Type="Categoria" IsForeignKey="true" />
       <Association Name="SubCategoria_Produto" Member="SubCategoria" ThisKey="id_sub_categoria" OtherKey="id" Type="SubCategoria" IsForeignKey="true" />
       <Association Name="ProdutoTipoUnidade_Produto" Member="ProdutoTipoUnidade" ThisKey="tipo_unidade" OtherKey="id" Type="ProdutoTipoUnidade" IsForeignKey="true" />
+      <Association Name="ProdutoTipoUnidade1_Produto" Member="ProdutoTipoUnidade1" ThisKey="tipo_unidade" OtherKey="id" Type="ProdutoTipoUnidade1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ProdutoTipoUnidade" Member="ProdutoTipoUnidade">
@@ -118,6 +120,47 @@
     <Type Name="Configuracoes">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="regime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SituacaoTibutaria" Member="SituacaoTibutaria">
+    <Type Name="SituacaoTibutaria">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_regime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="SituacaoTibutaria_ICMS" Member="ICMS" ThisKey="id" OtherKey="id_situacao_tributaria" Type="ICMS" />
+      <Association Name="Regime_SituacaoTibutaria" Member="Regime" ThisKey="id_regime" OtherKey="id" Type="Regime" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Regime" Member="Regime">
+    <Type Name="Regime">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Regime_SituacaoTibutaria" Member="SituacaoTibutaria" ThisKey="id" OtherKey="id_regime" Type="SituacaoTibutaria" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProdutoTipoUnidade" Member="ProdutoTipoUnidade1">
+    <Type Name="ProdutoTipoUnidade1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="ProdutoTipoUnidade1_Produto" Member="Produto" ThisKey="id" OtherKey="tipo_unidade" Type="Produto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Imposto" Member="Imposto">
+    <Type Name="Imposto">
+      <Column Name="id_ICMS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_categoria" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Categoria_Imposto" Member="Categoria" ThisKey="id_categoria" OtherKey="id" Type="Categoria" IsForeignKey="true" />
+      <Association Name="ICMS_Imposto" Member="ICMS" ThisKey="id_ICMS" OtherKey="id" Type="ICMS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ICMS" Member="ICMS">
+    <Type Name="ICMS">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_situacao_tributaria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_origem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ICMS_Imposto" Member="Imposto" ThisKey="id" OtherKey="id_ICMS" Type="Imposto" />
+      <Association Name="SituacaoTibutaria_ICMS" Member="SituacaoTibutaria" ThisKey="id_situacao_tributaria" OtherKey="id" Type="SituacaoTibutaria" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
