@@ -52,6 +52,8 @@
             this.transportadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipal = new System.Windows.Forms.MenuStrip();
+            this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -292,6 +294,7 @@
             // 
             this.menuStripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem,
+            this.listasToolStripMenuItem,
             this.conToolStripMenuItem});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
@@ -299,6 +302,21 @@
             this.menuStripPrincipal.Size = new System.Drawing.Size(942, 24);
             this.menuStripPrincipal.TabIndex = 3;
             this.menuStripPrincipal.Text = "menuStrip1";
+            // 
+            // listasToolStripMenuItem
+            // 
+            this.listasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.categoriasToolStripMenuItem});
+            this.listasToolStripMenuItem.Name = "listasToolStripMenuItem";
+            this.listasToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.listasToolStripMenuItem.Text = "Listas";
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -355,6 +373,8 @@
         private System.Windows.Forms.ToolStripMenuItem transportadoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStripPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
 
     }
 }

@@ -26,6 +26,9 @@ namespace vdmAdmin
 
                 if (cat != null)
                 {
+                    txtNome.Text = cat.nome;
+                    txtID.Text = cat.id.ToString();
+
                     frmImposto frmicms = new frmImposto(cat);
                     frmicms.MdiParent = this;
                     frmicms.Tag = 1;
@@ -47,6 +50,11 @@ namespace vdmAdmin
                     cat.nome = txtNome.Text;
                     MessageBox.Show(rdnCat.adicionar(cat));
                 }
+
+                frmImposto frmicms = new frmImposto(cat);
+                frmicms.MdiParent = this;
+                frmicms.Tag = 1;
+                frmicms.Show();
             }
         }
     }

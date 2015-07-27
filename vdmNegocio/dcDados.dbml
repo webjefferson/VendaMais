@@ -122,21 +122,11 @@
       <Column Name="regime" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SituacaoTibutaria" Member="SituacaoTibutaria">
-    <Type Name="SituacaoTibutaria">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_regime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="descricao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="SituacaoTibutaria_ICMS" Member="ICMS" ThisKey="id" OtherKey="id_situacao_tributaria" Type="ICMS" />
-      <Association Name="Regime_SituacaoTibutaria" Member="Regime" ThisKey="id_regime" OtherKey="id" Type="Regime" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Regime" Member="Regime">
     <Type Name="Regime">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Regime_SituacaoTibutaria" Member="SituacaoTibutaria" ThisKey="id" OtherKey="id_regime" Type="SituacaoTibutaria" />
+      <Association Name="Regime_SituacaoTributaria" Member="SituacaoTributaria" ThisKey="id" OtherKey="id_regime" Type="SituacaoTributaria" />
     </Type>
   </Table>
   <Table Name="dbo.ProdutoTipoUnidade" Member="ProdutoTipoUnidade1">
@@ -160,7 +150,17 @@
       <Column Name="id_situacao_tributaria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_origem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ICMS_Imposto" Member="Imposto" ThisKey="id" OtherKey="id_ICMS" Type="Imposto" />
-      <Association Name="SituacaoTibutaria_ICMS" Member="SituacaoTibutaria" ThisKey="id_situacao_tributaria" OtherKey="id" Type="SituacaoTibutaria" IsForeignKey="true" />
+      <Association Name="SituacaoTributaria_ICMS" Member="SituacaoTributaria" ThisKey="id_situacao_tributaria" OtherKey="id" Type="SituacaoTributaria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SituacaoTributaria" Member="SituacaoTributaria">
+    <Type Name="SituacaoTributaria">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_regime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="SituacaoTributaria_ICMS" Member="ICMS" ThisKey="id" OtherKey="id_situacao_tributaria" Type="ICMS" />
+      <Association Name="Regime_SituacaoTributaria" Member="Regime" ThisKey="id_regime" OtherKey="id" Type="Regime" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

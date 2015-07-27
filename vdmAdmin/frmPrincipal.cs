@@ -62,6 +62,14 @@ namespace vdmAdmin
 
             frmConfig.Show();
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLista frm = new frmLista();
+
+            frm.Tag = 1;
+            frm.Show();
+        }
         
     }
 }

@@ -69,9 +69,6 @@ namespace vdmNegocio
     partial void InsertConfiguracoes(Configuracoes instance);
     partial void UpdateConfiguracoes(Configuracoes instance);
     partial void DeleteConfiguracoes(Configuracoes instance);
-    partial void InsertSituacaoTibutaria(SituacaoTibutaria instance);
-    partial void UpdateSituacaoTibutaria(SituacaoTibutaria instance);
-    partial void DeleteSituacaoTibutaria(SituacaoTibutaria instance);
     partial void InsertRegime(Regime instance);
     partial void UpdateRegime(Regime instance);
     partial void DeleteRegime(Regime instance);
@@ -84,6 +81,9 @@ namespace vdmNegocio
     partial void InsertICMS(ICMS instance);
     partial void UpdateICMS(ICMS instance);
     partial void DeleteICMS(ICMS instance);
+    partial void InsertSituacaoTributaria(SituacaoTributaria instance);
+    partial void UpdateSituacaoTributaria(SituacaoTributaria instance);
+    partial void DeleteSituacaoTributaria(SituacaoTributaria instance);
     #endregion
 		
 		public dcDadosDataContext() : 
@@ -228,14 +228,6 @@ namespace vdmNegocio
 			}
 		}
 		
-		public System.Data.Linq.Table<SituacaoTibutaria> SituacaoTibutaria
-		{
-			get
-			{
-				return this.GetTable<SituacaoTibutaria>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Regime> Regime
 		{
 			get
@@ -265,6 +257,14 @@ namespace vdmNegocio
 			get
 			{
 				return this.GetTable<ICMS>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SituacaoTributaria> SituacaoTributaria
+		{
+			get
+			{
+				return this.GetTable<SituacaoTributaria>();
 			}
 		}
 	}
@@ -2441,209 +2441,6 @@ namespace vdmNegocio
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SituacaoTibutaria")]
-	public partial class SituacaoTibutaria : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private int _codigo;
-		
-		private int _id_regime;
-		
-		private string _descricao;
-		
-		private EntitySet<ICMS> _ICMS;
-		
-		private EntityRef<Regime> _Regime;
-		
-    #region Definições do Método de Extensibilidade
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OncodigoChanging(int value);
-    partial void OncodigoChanged();
-    partial void Onid_regimeChanging(int value);
-    partial void Onid_regimeChanged();
-    partial void OndescricaoChanging(string value);
-    partial void OndescricaoChanged();
-    #endregion
-		
-		public SituacaoTibutaria()
-		{
-			this._ICMS = new EntitySet<ICMS>(new Action<ICMS>(this.attach_ICMS), new Action<ICMS>(this.detach_ICMS));
-			this._Regime = default(EntityRef<Regime>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="Int NOT NULL")]
-		public int codigo
-		{
-			get
-			{
-				return this._codigo;
-			}
-			set
-			{
-				if ((this._codigo != value))
-				{
-					this.OncodigoChanging(value);
-					this.SendPropertyChanging();
-					this._codigo = value;
-					this.SendPropertyChanged("codigo");
-					this.OncodigoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_regime", DbType="Int NOT NULL")]
-		public int id_regime
-		{
-			get
-			{
-				return this._id_regime;
-			}
-			set
-			{
-				if ((this._id_regime != value))
-				{
-					if (this._Regime.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_regimeChanging(value);
-					this.SendPropertyChanging();
-					this._id_regime = value;
-					this.SendPropertyChanged("id_regime");
-					this.Onid_regimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string descricao
-		{
-			get
-			{
-				return this._descricao;
-			}
-			set
-			{
-				if ((this._descricao != value))
-				{
-					this.OndescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._descricao = value;
-					this.SendPropertyChanged("descricao");
-					this.OndescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SituacaoTibutaria_ICMS", Storage="_ICMS", ThisKey="id", OtherKey="id_situacao_tributaria")]
-		public EntitySet<ICMS> ICMS
-		{
-			get
-			{
-				return this._ICMS;
-			}
-			set
-			{
-				this._ICMS.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Regime_SituacaoTibutaria", Storage="_Regime", ThisKey="id_regime", OtherKey="id", IsForeignKey=true)]
-		public Regime Regime
-		{
-			get
-			{
-				return this._Regime.Entity;
-			}
-			set
-			{
-				Regime previousValue = this._Regime.Entity;
-				if (((previousValue != value) 
-							|| (this._Regime.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Regime.Entity = null;
-						previousValue.SituacaoTibutaria.Remove(this);
-					}
-					this._Regime.Entity = value;
-					if ((value != null))
-					{
-						value.SituacaoTibutaria.Add(this);
-						this._id_regime = value.id;
-					}
-					else
-					{
-						this._id_regime = default(int);
-					}
-					this.SendPropertyChanged("Regime");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_ICMS(ICMS entity)
-		{
-			this.SendPropertyChanging();
-			entity.SituacaoTibutaria = this;
-		}
-		
-		private void detach_ICMS(ICMS entity)
-		{
-			this.SendPropertyChanging();
-			entity.SituacaoTibutaria = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Regime")]
 	public partial class Regime : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2654,7 +2451,7 @@ namespace vdmNegocio
 		
 		private string _descricao;
 		
-		private EntitySet<SituacaoTibutaria> _SituacaoTibutaria;
+		private EntitySet<SituacaoTributaria> _SituacaoTributaria;
 		
     #region Definições do Método de Extensibilidade
     partial void OnLoaded();
@@ -2668,7 +2465,7 @@ namespace vdmNegocio
 		
 		public Regime()
 		{
-			this._SituacaoTibutaria = new EntitySet<SituacaoTibutaria>(new Action<SituacaoTibutaria>(this.attach_SituacaoTibutaria), new Action<SituacaoTibutaria>(this.detach_SituacaoTibutaria));
+			this._SituacaoTributaria = new EntitySet<SituacaoTributaria>(new Action<SituacaoTributaria>(this.attach_SituacaoTributaria), new Action<SituacaoTributaria>(this.detach_SituacaoTributaria));
 			OnCreated();
 		}
 		
@@ -2712,16 +2509,16 @@ namespace vdmNegocio
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Regime_SituacaoTibutaria", Storage="_SituacaoTibutaria", ThisKey="id", OtherKey="id_regime")]
-		public EntitySet<SituacaoTibutaria> SituacaoTibutaria
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Regime_SituacaoTributaria", Storage="_SituacaoTributaria", ThisKey="id", OtherKey="id_regime")]
+		public EntitySet<SituacaoTributaria> SituacaoTributaria
 		{
 			get
 			{
-				return this._SituacaoTibutaria;
+				return this._SituacaoTributaria;
 			}
 			set
 			{
-				this._SituacaoTibutaria.Assign(value);
+				this._SituacaoTributaria.Assign(value);
 			}
 		}
 		
@@ -2745,13 +2542,13 @@ namespace vdmNegocio
 			}
 		}
 		
-		private void attach_SituacaoTibutaria(SituacaoTibutaria entity)
+		private void attach_SituacaoTributaria(SituacaoTributaria entity)
 		{
 			this.SendPropertyChanging();
 			entity.Regime = this;
 		}
 		
-		private void detach_SituacaoTibutaria(SituacaoTibutaria entity)
+		private void detach_SituacaoTributaria(SituacaoTributaria entity)
 		{
 			this.SendPropertyChanging();
 			entity.Regime = null;
@@ -3054,7 +2851,7 @@ namespace vdmNegocio
 		
 		private EntitySet<Imposto> _Imposto;
 		
-		private EntityRef<SituacaoTibutaria> _SituacaoTibutaria;
+		private EntityRef<SituacaoTributaria> _SituacaoTributaria;
 		
     #region Definições do Método de Extensibilidade
     partial void OnLoaded();
@@ -3071,7 +2868,7 @@ namespace vdmNegocio
 		public ICMS()
 		{
 			this._Imposto = new EntitySet<Imposto>(new Action<Imposto>(this.attach_Imposto), new Action<Imposto>(this.detach_Imposto));
-			this._SituacaoTibutaria = default(EntityRef<SituacaoTibutaria>);
+			this._SituacaoTributaria = default(EntityRef<SituacaoTributaria>);
 			OnCreated();
 		}
 		
@@ -3106,7 +2903,7 @@ namespace vdmNegocio
 			{
 				if ((this._id_situacao_tributaria != value))
 				{
-					if (this._SituacaoTibutaria.HasLoadedOrAssignedValue)
+					if (this._SituacaoTributaria.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -3152,26 +2949,26 @@ namespace vdmNegocio
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SituacaoTibutaria_ICMS", Storage="_SituacaoTibutaria", ThisKey="id_situacao_tributaria", OtherKey="id", IsForeignKey=true)]
-		public SituacaoTibutaria SituacaoTibutaria
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SituacaoTributaria_ICMS", Storage="_SituacaoTributaria", ThisKey="id_situacao_tributaria", OtherKey="id", IsForeignKey=true)]
+		public SituacaoTributaria SituacaoTributaria
 		{
 			get
 			{
-				return this._SituacaoTibutaria.Entity;
+				return this._SituacaoTributaria.Entity;
 			}
 			set
 			{
-				SituacaoTibutaria previousValue = this._SituacaoTibutaria.Entity;
+				SituacaoTributaria previousValue = this._SituacaoTributaria.Entity;
 				if (((previousValue != value) 
-							|| (this._SituacaoTibutaria.HasLoadedOrAssignedValue == false)))
+							|| (this._SituacaoTributaria.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._SituacaoTibutaria.Entity = null;
+						this._SituacaoTributaria.Entity = null;
 						previousValue.ICMS.Remove(this);
 					}
-					this._SituacaoTibutaria.Entity = value;
+					this._SituacaoTributaria.Entity = value;
 					if ((value != null))
 					{
 						value.ICMS.Add(this);
@@ -3181,7 +2978,7 @@ namespace vdmNegocio
 					{
 						this._id_situacao_tributaria = default(int);
 					}
-					this.SendPropertyChanged("SituacaoTibutaria");
+					this.SendPropertyChanged("SituacaoTributaria");
 				}
 			}
 		}
@@ -3216,6 +3013,209 @@ namespace vdmNegocio
 		{
 			this.SendPropertyChanging();
 			entity.ICMS = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SituacaoTributaria")]
+	public partial class SituacaoTributaria : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _codigo;
+		
+		private int _id_regime;
+		
+		private string _descricao;
+		
+		private EntitySet<ICMS> _ICMS;
+		
+		private EntityRef<Regime> _Regime;
+		
+    #region Definições do Método de Extensibilidade
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OncodigoChanging(int value);
+    partial void OncodigoChanged();
+    partial void Onid_regimeChanging(int value);
+    partial void Onid_regimeChanged();
+    partial void OndescricaoChanging(string value);
+    partial void OndescricaoChanged();
+    #endregion
+		
+		public SituacaoTributaria()
+		{
+			this._ICMS = new EntitySet<ICMS>(new Action<ICMS>(this.attach_ICMS), new Action<ICMS>(this.detach_ICMS));
+			this._Regime = default(EntityRef<Regime>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="Int NOT NULL")]
+		public int codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this.OncodigoChanging(value);
+					this.SendPropertyChanging();
+					this._codigo = value;
+					this.SendPropertyChanged("codigo");
+					this.OncodigoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_regime", DbType="Int NOT NULL")]
+		public int id_regime
+		{
+			get
+			{
+				return this._id_regime;
+			}
+			set
+			{
+				if ((this._id_regime != value))
+				{
+					if (this._Regime.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_regimeChanging(value);
+					this.SendPropertyChanging();
+					this._id_regime = value;
+					this.SendPropertyChanged("id_regime");
+					this.Onid_regimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this.OndescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._descricao = value;
+					this.SendPropertyChanged("descricao");
+					this.OndescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SituacaoTributaria_ICMS", Storage="_ICMS", ThisKey="id", OtherKey="id_situacao_tributaria")]
+		public EntitySet<ICMS> ICMS
+		{
+			get
+			{
+				return this._ICMS;
+			}
+			set
+			{
+				this._ICMS.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Regime_SituacaoTributaria", Storage="_Regime", ThisKey="id_regime", OtherKey="id", IsForeignKey=true)]
+		public Regime Regime
+		{
+			get
+			{
+				return this._Regime.Entity;
+			}
+			set
+			{
+				Regime previousValue = this._Regime.Entity;
+				if (((previousValue != value) 
+							|| (this._Regime.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Regime.Entity = null;
+						previousValue.SituacaoTributaria.Remove(this);
+					}
+					this._Regime.Entity = value;
+					if ((value != null))
+					{
+						value.SituacaoTributaria.Add(this);
+						this._id_regime = value.id;
+					}
+					else
+					{
+						this._id_regime = default(int);
+					}
+					this.SendPropertyChanged("Regime");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ICMS(ICMS entity)
+		{
+			this.SendPropertyChanging();
+			entity.SituacaoTributaria = this;
+		}
+		
+		private void detach_ICMS(ICMS entity)
+		{
+			this.SendPropertyChanging();
+			entity.SituacaoTributaria = null;
 		}
 	}
 }

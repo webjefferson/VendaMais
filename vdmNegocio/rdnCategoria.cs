@@ -9,9 +9,11 @@ namespace vdmNegocio
 {
     public class rdnCategoria
     {
+        GenericDAO dao = new GenericDAO();
+
         public String adicionar(Categoria categoria)
         {
-            return "ERRO";
+           return dao.adicionar(categoria);
         }
 
         public List<Categoria> listarTodos()

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/css")
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+</head>
+<body style=" background-color: #FBEFF5;">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Olá Erisson Costa.</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="row col-sm-2 col-md-2">
+            <center>
+                <div class="row">
+                    <a href="/"><img src="http://placehold.it/200x110" class="img-responsive" /></a>
+                </div>
+            </center>
+        </div>
+        <div class="col-sm-10 col-md-10">
+            <div class="row col-sm-12 col-md-12 text-center">
+                <div class="col-sm-12 col-md-6">
+                    <form class="form-inline" role="search" id="form_pesquisa">
+                        <div class="form-group input-group">
+                            <input type="text" class="form-control input-lg" placeholder="O que está procurando?">
+                            <span class="input-group-btn"><button class="btn btn-default input-lg" type="button"><img src="~/Content/imagens/search.ico" width="15" height="15" /></button></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-6 hidden-xs text-center">
+                    <a href="#" data-toggle="modal" data-target="#myModal" role="button">Olá, <img src="~/Content/imagens/erisson.jpg" width="30" height="30" class="img-circle" /></a>
+                </div>
+            </div>
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primeiro_menu">
+                    <img src="~/Content/imagens/menu.png" width="20" height="20" />
+                </button>
+            </div>
+
+            <div id="primeiro_menu" class="row col-sm-12 col-md-12 collapse navbar-collapse">
+                <div class="col-sm-12 col-md-6 hidden-sm hidden-md hidden-lg">
+                    <a href="#" data-toggle="modal" data-target="#myModal" role="button">Olá, <img src="~/Content/imagens/erisson.jpg" width="30" height="30" class="img-circle" /></a>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <ul class="nav row navbar-nav nav-pills col-md-12 col-md-12 ">
+                        @foreach (var categoria in ViewBag.Categorias)
+                        {
+                            <li class="categoria"><a style="padding:7px;" href="/home/ProdutoListar?cat=@categoria.id">@categoria.nome</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="site">
+        <div class="row">
+            <div class=" col-md-3">
+                <nav class="nav-stacked">
+                    <ul class="nav  nav-pills nav-stacked span3">
+                        @foreach (var subcategoria in ViewBag.SubCategorias)
+                        {
+                            <li><a href="/home/ProdutoListar?subcat=@subcategoria.id">@subcategoria.nome</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#segundo_menu">
+                        <img src="~/Content/imagens/help.png" width="20" height="20" />
+                    </button>
+                    <a class="navbar-brand">nomedaloja.com</a>
+                </div>
+                <div class="collapse navbar-collapse" id="segundo_menu">
+                    <ul class="nav navbar-nav text-center">
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">Formas de Entrega</a></li>
+                        <li><a href="#">Dúvidas</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
