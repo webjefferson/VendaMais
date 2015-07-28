@@ -132,8 +132,11 @@
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxLista);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLista";
-            this.Text = "frmLista";
+            this.Text = "Listas";
             this.Load += new System.EventHandler(this.frmLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);

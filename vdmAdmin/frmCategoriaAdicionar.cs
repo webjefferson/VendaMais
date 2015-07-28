@@ -43,6 +43,7 @@ namespace vdmAdmin
             if (cat == null)
             {
                 cat = new Categoria();
+
                 String erro = "";
 
                 if (erro == "")
@@ -56,6 +57,11 @@ namespace vdmAdmin
                 frmicms.Tag = 1;
                 frmicms.Show();
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
