@@ -68,18 +68,6 @@
     <Compile Include="frmConfiguracoes.Designer.cs">
       <DependentUpon>frmConfiguracoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmICMSAdicionar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmICMSAdicionar.Designer.cs">
-      <DependentUpon>frmICMSAdicionar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmImposto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmImposto.Designer.cs">
-      <DependentUpon>frmImposto.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +96,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracoes.resx">
       <DependentUpon>frmConfiguracoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmICMS.resx">
-      <DependentUpon>frmImposto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmICMSAdicionar.resx">
-      <DependentUpon>frmICMSAdicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLista.resx">
       <DependentUpon>frmLista.cs</DependentUpon>

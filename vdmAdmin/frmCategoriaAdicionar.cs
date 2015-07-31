@@ -29,10 +29,10 @@ namespace vdmAdmin
                     txtNome.Text = cat.nome;
                     txtID.Text = cat.id.ToString();
 
-                    frmImposto frmicms = new frmImposto(cat);
-                    frmicms.MdiParent = this;
-                    frmicms.Tag = 1;
-                    frmicms.Show();
+                    //frmImposto frmicms = new frmImposto(cat);
+                    //frmicms.MdiParent = this;
+                    //frmicms.Tag = 1;
+                    //frmicms.Show();
                 }
             }
         }
@@ -52,10 +52,10 @@ namespace vdmAdmin
                     MessageBox.Show(rdnCat.adicionar(cat));
                 }
 
-                frmImposto frmicms = new frmImposto(cat);
-                frmicms.MdiParent = this;
-                frmicms.Tag = 1;
-                frmicms.Show();
+                //frmImposto frmicms = new frmImposto(cat);
+                //frmicms.MdiParent = this;
+                //frmicms.Tag = 1;
+                //frmicms.Show();
             }
         }
 

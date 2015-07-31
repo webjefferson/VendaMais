@@ -87,7 +87,7 @@ namespace vdmNegocio
     #endregion
 		
 		public dcDadosDataContext() : 
-				base(global::vdmNegocio.Properties.Settings.Default.VendasMaisConnectionString, mappingSource)
+				base(global::vdmNegocio.Properties.Settings.Default.csVendaMais, mappingSource)
 		{
 			OnCreated();
 		}
