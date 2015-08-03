@@ -17,7 +17,7 @@ namespace vdmNegocio
             produto.data_inclusao = DateTime.Now;
             return dao.adicionar(produto);
         }
-       
+
         public List<Produto> listarTodos(int cat = 0, int subcat = 0)
         {
             List<Produto> lista = new List<Produto>();
@@ -45,10 +45,33 @@ namespace vdmNegocio
 
         public Produto buscaPorId(Int32 idProduto)
         {
-            var qry = from p in contexto.Produto where p.id_produto == idProduto select p;         
-            return qry.Single();               
+            var qry = from p in contexto.Produto where p.id_produto == idProduto select p;
+            return qry.Single();
         }
 
+        public ICMS buscarICMSPorID(int icms)
+        {
+            var qry = from i in contexto.ICMS where i.id == icms select i;
+            return qry.Single();
+        }
+
+        public List<Imposto> listaImpostoCategoria(Categoria cat)
+        {
+            var qry = from c in contexto.Imposto where c.id_categoria == cat.id select c;
+            return qry.ToList();
+        }
+
+        public List<ICMS> listaICMSPorCategoria(Categoria cat)
+        {
+            List<ICMS> lista = new List<ICMS>();
+
+            foreach (var I in listaImpostoCategoria(cat))
+            {
+                lista.Add(buscarICMSPorID(I.id_ICMS));
+            }
+
+            return lista;
+        }
 
     }
 }

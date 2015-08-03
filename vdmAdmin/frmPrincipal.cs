@@ -66,8 +66,8 @@ namespace vdmAdmin
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLista frm = new frmLista();
-
             frm.Tag = 1;
+            frm.MdiParent = this;
             frm.Show();
         }
         

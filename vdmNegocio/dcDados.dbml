@@ -99,7 +99,6 @@
       <Association Name="Categoria_Produto" Member="Categoria" ThisKey="id_categoria" OtherKey="id" Type="Categoria" IsForeignKey="true" />
       <Association Name="SubCategoria_Produto" Member="SubCategoria" ThisKey="id_sub_categoria" OtherKey="id" Type="SubCategoria" IsForeignKey="true" />
       <Association Name="ProdutoTipoUnidade_Produto" Member="ProdutoTipoUnidade" ThisKey="tipo_unidade" OtherKey="id" Type="ProdutoTipoUnidade" IsForeignKey="true" />
-      <Association Name="ProdutoTipoUnidade1_Produto" Member="ProdutoTipoUnidade1" ThisKey="tipo_unidade" OtherKey="id" Type="ProdutoTipoUnidade1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ProdutoTipoUnidade" Member="ProdutoTipoUnidade">
@@ -127,13 +126,6 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Regime_SituacaoTributaria" Member="SituacaoTributaria" ThisKey="id" OtherKey="id_regime" Type="SituacaoTributaria" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ProdutoTipoUnidade" Member="ProdutoTipoUnidade1">
-    <Type Name="ProdutoTipoUnidade1">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Descricao" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
-      <Association Name="ProdutoTipoUnidade1_Produto" Member="Produto" ThisKey="id" OtherKey="tipo_unidade" Type="Produto" />
     </Type>
   </Table>
   <Table Name="dbo.Imposto" Member="Imposto">

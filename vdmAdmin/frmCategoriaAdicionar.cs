@@ -13,7 +13,7 @@ namespace vdmAdmin
 {
     public partial class frmCategoriaAdicionar : Form
     {
-        Categoria cat = null;
+        Categoria catLocal = null;
         rdnCategoria rdnCat = new rdnCategoria();
 
         public frmCategoriaAdicionar(Categoria c = null)
@@ -22,17 +22,17 @@ namespace vdmAdmin
 
             if (c != null)
             {
-                cat = c;
+                catLocal = c;
 
-                if (cat != null)
+                if (catLocal != null)
                 {
-                    txtNome.Text = cat.nome;
-                    txtID.Text = cat.id.ToString();
+                    txtNome.Text = catLocal.nome;
+                    txtID.Text = catLocal.id.ToString();
 
-                    //frmImposto frmicms = new frmImposto(cat);
-                    //frmicms.MdiParent = this;
-                    //frmicms.Tag = 1;
-                    //frmicms.Show();
+                    frmICMS frmicms = new frmICMS(catLocal);
+                    frmicms.MdiParent = this;
+                    frmicms.Tag = 1;
+                    frmicms.Show();
                 }
             }
         }
@@ -40,22 +40,23 @@ namespace vdmAdmin
         private void btnSalvar_Click(object sender, EventArgs e)
         {
 
-            if (cat == null)
+            if (catLocal == null)
             {
-                cat = new Categoria();
+                catLocal = new Categoria();
 
                 String erro = "";
 
                 if (erro == "")
                 {
-                    cat.nome = txtNome.Text;
-                    MessageBox.Show(rdnCat.adicionar(cat));
+                    catLocal.nome = txtNome.Text;
+                    MessageBox.Show(rdnCat.adicionar(catLocal));
+                    txtID.Text = catLocal.id.ToString();
                 }
 
-                //frmImposto frmicms = new frmImposto(cat);
-                //frmicms.MdiParent = this;
-                //frmicms.Tag = 1;
-                //frmicms.Show();
+                frmICMS frmicms = new frmICMS(catLocal);
+                frmicms.MdiParent = this;
+                frmicms.Tag = 1;
+                frmicms.Show();
             }
         }
 
