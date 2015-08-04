@@ -96,7 +96,10 @@ namespace vdmAdmin
         private void btnCatAdd_Click(object sender, EventArgs e)
         {
             frmCategoriaAdicionar frmCat = new frmCategoriaAdicionar();
-            frmCat.ShowDialog();
+
+            DialogResult dlg =  frmCat.ShowDialog();
+
+            dlg = DialogResult.Yes;
 
         }
     }

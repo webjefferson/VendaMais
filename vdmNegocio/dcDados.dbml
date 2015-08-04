@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VendasMais" Class="dcDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=VendasMais;Integrated Security=True" SettingsObjectName="vdmNegocio.Properties.Settings" SettingsPropertyName="VendasMaisConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VendaMais" Class="dcDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ERISSON-PC\SQLEXPRESS;Initial Catalog=VendaMais;Integrated Security=True" SettingsObjectName="vdmNegocio.Properties.Settings" SettingsPropertyName="csVendaMais" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Categoria" Member="Categoria">
     <Type Name="Categoria">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -143,6 +143,7 @@
       <Column Name="id_origem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ICMS_Imposto" Member="Imposto" ThisKey="id" OtherKey="id_ICMS" Type="Imposto" />
       <Association Name="SituacaoTributaria_ICMS" Member="SituacaoTributaria" ThisKey="id_situacao_tributaria" OtherKey="id" Type="SituacaoTributaria" IsForeignKey="true" />
+      <Association Name="Origem_ICMS" Member="Origem" ThisKey="id_origem" OtherKey="id" Type="Origem" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SituacaoTributaria" Member="SituacaoTributaria">
@@ -153,6 +154,13 @@
       <Column Name="descricao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Association Name="SituacaoTributaria_ICMS" Member="ICMS" ThisKey="id" OtherKey="id_situacao_tributaria" Type="ICMS" />
       <Association Name="Regime_SituacaoTributaria" Member="Regime" ThisKey="id_regime" OtherKey="id" Type="Regime" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Origem" Member="Origems">
+    <Type Name="Origem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dscricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Origem_ICMS" Member="ICMS" ThisKey="id" OtherKey="id_origem" Type="ICMS" />
     </Type>
   </Table>
 </Database>

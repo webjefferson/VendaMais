@@ -92,6 +92,12 @@
     <Compile Include="frmProdutoAdicionar.Designer.cs">
       <DependentUpon>frmProdutoAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSubCategoriaAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubCategoriaAdicionar.Designer.cs">
+      <DependentUpon>frmSubCategoriaAdicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCategoriaAdicionar.resx">
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProdutoAdicionar.resx">
       <DependentUpon>frmProdutoAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubCategoriaAdicionar.resx">
+      <DependentUpon>frmSubCategoriaAdicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

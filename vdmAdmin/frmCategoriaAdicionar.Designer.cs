@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,16 @@
             this.panel1.Size = new System.Drawing.Size(595, 146);
             this.panel1.TabIndex = 7;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(3, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Impostos desta categoria";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -59,7 +69,7 @@
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Location = new System.Drawing.Point(214, 12);
+            this.groupBox1.Location = new System.Drawing.Point(193, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(211, 123);
             this.groupBox1.TabIndex = 1;
@@ -118,16 +128,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(25, 20);
             this.txtID.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(3, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Impostos desta categoria";
             // 
             // frmCategoriaAdicionar
             // 

@@ -49,6 +49,10 @@ namespace vdmNegocio
             return qry.Single();
         }
 
+
+
+        //Fiscal
+
         public ICMS buscarICMSPorID(int icms)
         {
             var qry = from i in contexto.ICMS where i.id == icms select i;
@@ -59,6 +63,15 @@ namespace vdmNegocio
         {
             var qry = from c in contexto.Imposto where c.id_categoria == cat.id select c;
             return qry.ToList();
+        }
+
+        public String situacaoPorID(int ID)
+        {
+            var qry = from s in contexto.SituacaoTributaria where s.id == ID select s;
+
+            SituacaoTributaria st =  qry.Single();
+
+            return st.codigo + " - " + st.descricao;
         }
 
         public List<ICMS> listaICMSPorCategoria(Categoria cat)

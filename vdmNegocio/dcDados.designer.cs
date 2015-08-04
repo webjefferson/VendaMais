@@ -22,7 +22,7 @@ namespace vdmNegocio
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="VendasMais")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="VendaMais")]
 	public partial class dcDadosDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -81,6 +81,9 @@ namespace vdmNegocio
     partial void InsertSituacaoTributaria(SituacaoTributaria instance);
     partial void UpdateSituacaoTributaria(SituacaoTributaria instance);
     partial void DeleteSituacaoTributaria(SituacaoTributaria instance);
+    partial void InsertOrigem(Origem instance);
+    partial void UpdateOrigem(Origem instance);
+    partial void DeleteOrigem(Origem instance);
     #endregion
 		
 		public dcDadosDataContext() : 
@@ -254,6 +257,14 @@ namespace vdmNegocio
 			get
 			{
 				return this.GetTable<SituacaoTributaria>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Origem> Origems
+		{
+			get
+			{
+				return this.GetTable<Origem>();
 			}
 		}
 	}
@@ -2691,6 +2702,8 @@ namespace vdmNegocio
 		
 		private EntityRef<SituacaoTributaria> _SituacaoTributaria;
 		
+		private EntityRef<Origem> _Origem;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2707,6 +2720,7 @@ namespace vdmNegocio
 		{
 			this._Imposto = new EntitySet<Imposto>(new Action<Imposto>(this.attach_Imposto), new Action<Imposto>(this.detach_Imposto));
 			this._SituacaoTributaria = default(EntityRef<SituacaoTributaria>);
+			this._Origem = default(EntityRef<Origem>);
 			OnCreated();
 		}
 		
@@ -2765,6 +2779,10 @@ namespace vdmNegocio
 			{
 				if ((this._id_origem != value))
 				{
+					if (this._Origem.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.Onid_origemChanging(value);
 					this.SendPropertyChanging();
 					this._id_origem = value;
@@ -2817,6 +2835,40 @@ namespace vdmNegocio
 						this._id_situacao_tributaria = default(int);
 					}
 					this.SendPropertyChanged("SituacaoTributaria");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Origem_ICMS", Storage="_Origem", ThisKey="id_origem", OtherKey="id", IsForeignKey=true)]
+		public Origem Origem
+		{
+			get
+			{
+				return this._Origem.Entity;
+			}
+			set
+			{
+				Origem previousValue = this._Origem.Entity;
+				if (((previousValue != value) 
+							|| (this._Origem.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Origem.Entity = null;
+						previousValue.ICMS.Remove(this);
+					}
+					this._Origem.Entity = value;
+					if ((value != null))
+					{
+						value.ICMS.Add(this);
+						this._id_origem = value.id;
+					}
+					else
+					{
+						this._id_origem = default(int);
+					}
+					this.SendPropertyChanged("Origem");
 				}
 			}
 		}
@@ -3054,6 +3106,120 @@ namespace vdmNegocio
 		{
 			this.SendPropertyChanging();
 			entity.SituacaoTributaria = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Origem")]
+	public partial class Origem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _dscricao;
+		
+		private EntitySet<ICMS> _ICMS;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OndscricaoChanging(string value);
+    partial void OndscricaoChanged();
+    #endregion
+		
+		public Origem()
+		{
+			this._ICMS = new EntitySet<ICMS>(new Action<ICMS>(this.attach_ICMS), new Action<ICMS>(this.detach_ICMS));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dscricao", DbType="VarChar(50)")]
+		public string dscricao
+		{
+			get
+			{
+				return this._dscricao;
+			}
+			set
+			{
+				if ((this._dscricao != value))
+				{
+					this.OndscricaoChanging(value);
+					this.SendPropertyChanging();
+					this._dscricao = value;
+					this.SendPropertyChanged("dscricao");
+					this.OndscricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Origem_ICMS", Storage="_ICMS", ThisKey="id", OtherKey="id_origem")]
+		public EntitySet<ICMS> ICMS
+		{
+			get
+			{
+				return this._ICMS;
+			}
+			set
+			{
+				this._ICMS.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ICMS(ICMS entity)
+		{
+			this.SendPropertyChanging();
+			entity.Origem = this;
+		}
+		
+		private void detach_ICMS(ICMS entity)
+		{
+			this.SendPropertyChanging();
+			entity.Origem = null;
 		}
 	}
 }

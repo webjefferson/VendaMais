@@ -16,9 +16,11 @@ namespace vdmAdmin
         Categoria catLocal = null;
         rdnProduto rdn = new rdnProduto();
 
-        public frmICMS(Categoria cat)
+        public frmICMS(Categoria cat = null)
         {
             InitializeComponent();
+
+            //tpFormulario.vi
 
             catLocal = cat;
         }
@@ -27,9 +29,28 @@ namespace vdmAdmin
         {
             if (Convert.ToInt32(this.Tag) == 1)
             {
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("ID", typeof(int));
+                dt.Columns.Add("SituacaoTributaria", typeof(string));
+                dt.Columns.Add("Origem", typeof(string));
+
+                
+
+
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.WindowState = FormWindowState.Maximized;
-                dgvICMS.DataSource = rdn.listaICMSPorCategoria(catLocal);
+
+               
+
+                foreach (var item in rdn.listaImpostoCategoria(catLocal))
+                {
+                    dt.Rows.Add(item.ICMS.id, item.ICMS.SituacaoTributaria.codigo + " - " + item.ICMS.SituacaoTributaria.descricao, item.ICMS.Origem.dscricao);
+                    
+                }
+
+
+                dgvICMS.DataSource = dt;
                 
             }
         }
